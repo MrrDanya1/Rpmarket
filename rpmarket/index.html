@@ -44,17 +44,7 @@
       }
     </script>
   </head>
-  <body class="ui-loading">
-    <!-- Boot loader: present in the very first paint so the half-built page (navbar, empty
-         sections) is never visible before the JS bundle creates its own overlay. ensureUiLoader()
-         adopts this element. -->
-    <div class="ui-loader-overlay show" id="uiBootLoader" role="status" aria-live="polite">
-      <div class="ui-loader-card">
-        <div class="ui-loader-spinner" aria-hidden="true"></div>
-        <div class="ui-loader-title">Загружаем маркет...</div>
-        <div class="ui-loader-sub">Почти готово</div>
-      </div>
-    </div>
+  <body>
     <script>
       (function () {
         const APP_ASSET_VERSION = window.__APP_ASSET_VERSION__ || String(Date.now());
