@@ -1,3 +1,13 @@
+/* RP Market guest-only mode for the GitHub Pages copy.
+   Browsing must never trigger the Telegram sign-in flow.
+   Server-backed actions remain unavailable without the original API. */
+window.__RP_MARKET_GUEST_MODE__ = true;
+try {
+  if (typeof webAuthBoot === "function") {
+    webAuthBoot = async function () { return null; };
+  }
+} catch (_) {}
+
 async function runAndroidAuthBridgeIfNeeded() {
   try {
     const startParam = String(window.Telegram?.WebApp?.initDataUnsafe?.start_param || "").trim();
