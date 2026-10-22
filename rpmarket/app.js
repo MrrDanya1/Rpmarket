@@ -9,6 +9,7 @@ try {
 } catch (_) {}
 
 async function runAndroidAuthBridgeIfNeeded() {
+  if (window.__RP_MARKET_GUEST_MODE__) return false;
   try {
     const startParam = String(window.Telegram?.WebApp?.initDataUnsafe?.start_param || "").trim();
     if (startParam !== "android_auth") return false;
